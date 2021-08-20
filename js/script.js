@@ -62,23 +62,24 @@ linklist.insertAdjacentHTML('beforeend',
    const firstbutton = document.querySelector('button');
    firstbutton.setAttribute("class","active");   
  //setAttribute() method adds the specified attribute to an element, and gives it the specified value.
-linklist.addEventListener('click',(e) =>{
+ linklist.addEventListener('click',(e) =>{
    if(e.target.tagName === 'BUTTON'){
-      const addbutton = e.target;
-      addbutton.className = 'active';
       const removebutton = document.querySelector('.active');
       removebutton.className = '';
+      const addbutton = e.target;
+      addbutton.className = 'active';
       const display = addbutton.textContent;
       showPage(list,display);
-   } //call the showPage function passing 2 arguments 
+   } 
+   //removed the active class first then add it to the event target
+   //call the showPage function passing 2 arguments 
 
- })
+ });
 }
+
+
 // Call functions
 showPage(data,1);
 createbutton(data);
-
- 
-  
 
 
