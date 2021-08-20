@@ -68,12 +68,17 @@ linklist.addEventListener('click',(e) =>{
       addbutton.className = 'active';
       const removebutton = document.querySelector('.active');
       removebutton.className = '';
-      const action = addbutton.textContent;
-      showPage(list,action);
-   } //2 arguments required
+      const display = addbutton.textContent;
+      showPage(list,display);
+   } //call the showPage function passing 2 arguments 
 
  })
 }
 // Call functions
 showPage(data,1);
 createbutton(data);
+
+ 
+  
+
+
