@@ -68,6 +68,16 @@ linklist.insertAdjacentHTML('beforeend',
 
    const firstbutton = document.querySelector('button');
    firstbutton.setAttribute("class","active");
+   linklist.addEventListener('click',(e) =>{
+      if(e.target.tagName === 'BUTTON'){
+         const removebutton = document.querySelector('.active');
+         removebutton.className = '';
+         const addbutton = e.target;
+         addbutton.className = 'active';
+         const display = addbutton.textContent;
+         showPage(list,display);
+      } 
+    });
 }   
  //setAttribute() method adds the specified attribute to an element, and gives it the specified value.
  function insertSearchBar() {
@@ -94,16 +104,8 @@ const searchBtn = document.querySelector('button.submit');
 
 
 //click event for pagination buttons
-linklist.addEventListener('click',(e) =>{
-   if(e.target.tagName === 'BUTTON'){
-      const removebutton = document.querySelector('.active');
-      removebutton.className = '';
-      const addbutton = e.target;
-      addbutton.className = 'active';
-      const display = addbutton.textContent;
-      showPage(list,display);
-   } 
- });
+
+ 
 //removed the active class first then add it to the event target
 //call the showPage function passing 2 arguments 
 // Click event for search bar
@@ -123,6 +125,6 @@ searchField.addEventListener('keyup', () => {
    currentPage = 1
    showPage(itemData, currentPage);
    createbutton(itemData);
- 
+   
 });
 //return student.name.first or .last
