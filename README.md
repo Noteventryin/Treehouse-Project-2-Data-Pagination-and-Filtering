@@ -1,4 +1,6 @@
 # Project 2 Data Pagination and Filtering
+https://noteventryin.github.io/Treehouse-project-2-Data-Pagination-and-Filtering/
+
 going for Exceeds
 three steps for this project:
 Display the page. 
